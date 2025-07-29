@@ -48,7 +48,9 @@ jobs:
           chmod +x .github/scripts/*.*
           .github/scripts/dates.sh
           .github/scripts/index.sh
-      - uses: shalzz/zola-deploy-action@v0.20.0
+          find content -type f -name "*.txt" -exec sh -c 'mv "$0" "${0%.txt}.md"' {} \;
+      - name: Generate static files
+        uses: shalzz/zola-deploy-action@v0.20.0
         env:
           BUILD_ONLY: true
           ZOLA_BUILD_DIR: public
