@@ -43,18 +43,22 @@ jobs:
     steps:
       - uses: mfinelli/setup-imagemagick@v6
       - uses: actions/checkout@v4
+      - name: Generate indexes and add dates
+        run: |
+          chmod +x .github/scripts/*.*
+          sudo chown -R $USER:$USER public
+          .github/scripts/dates.sh
+          .github/scripts/index.sh
       - uses: shalzz/zola-deploy-action@v0.20.0
         env:
           BUILD_ONLY: true
           ZOLA_BUILD_DIR: public
-      - name: Generate pictures and indexes and add dates
+      - name: Generate pictures
         run: |
           chmod +x .github/scripts/*.*
           sudo chown -R $USER:$USER public
           .github/scripts/pictures.sh
           .github/scripts/pictures.py
-          .github/scripts/dates.sh
-          .github/scripts/index.sh
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
