@@ -15,8 +15,8 @@ generate_robots_txt = true
 
 # categorieën, tabladen en (hoofd)mappen (in content)
 taxonomies = [
-    { name = "categorieën", rss = true },
-    { name = "gedichten", rss = true }
+    { name = "gedichten", rss = true },
+    { name = "boeken", rss = true }
 ]
 
 # Techniesche instellingen
