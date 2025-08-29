@@ -26,7 +26,7 @@ lazy_async_image = true
 
 [extra]
 # thema configuratie
-webapp = true
+webapp = false
 theme_color = "#1976D2"
 keywords = "gedichtenkoffer, gedichten, leven, seizoenen, liefde, geboorte, rouw, kerst, sinterklaas"
 footer = "Dit gedicht mag onder vermelding van de auteur, Sonja Zuijdervelt, gebruikt/verspreid worden"
